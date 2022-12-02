@@ -136,6 +136,11 @@ if(NOT OCIO_INSTALL_EXT_PACKAGES STREQUAL ALL)
             yaml-cpp_VERSION
     )
 
+    if(WIN32)
+       set_target_properties(yaml-cpp PROPERTIES
+           IMPORTED_LOCATION_DEBUG "${_EXT_DIST_ROOT}/lib/libyaml-cppmdd${CMAKE_STATIC_LIBRARY_SUFFIX}")
+    endif()
+
     mark_as_advanced(yaml-cpp_INCLUDE_DIR yaml-cpp_LIBRARY yaml-cpp_VERSION)
 endif()
 
