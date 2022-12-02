@@ -178,10 +178,10 @@ if (UNIX AND NOT CMAKE_SKIP_RPATH AND CMAKE_INSTALL_RPATH)
     # dynamic library based on the default installation directory structure.
     if (APPLE)
         set_target_properties(PyOpenColorIO PROPERTIES
-            INSTALL_RPATH "@loader_path/../../..;${CMAKE_INSTALL_RPATH}")
+            INSTALL_RPATH "${SIDEFX_INSTALL_RPATH};${CMAKE_INSTALL_RPATH}")
     else()
         set_target_properties(PyOpenColorIO PROPERTIES
-            INSTALL_RPATH "$ORIGIN/../../..;${CMAKE_INSTALL_RPATH}")
+            INSTALL_RPATH "${SIDEFX_INSTALL_RPATH};${CMAKE_INSTALL_RPATH}")
     endif()
 endif()
 
