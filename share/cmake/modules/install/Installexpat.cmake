@@ -155,5 +155,10 @@ if(_expat_TARGET_CREATE)
         INTERFACE_INCLUDE_DIRECTORIES ${expat_INCLUDE_DIR}
     )
 
+    if(WIN32)
+        set_target_properties(expat::expat PROPERTIES
+            IMPORTED_LOCATION_DEBUG "${_EXT_DIST_ROOT}/${CMAKE_INSTALL_LIBDIR}/${_expat_LIB_PREFIX}expatdMD${CMAKE_STATIC_LIBRARY_SUFFIX}")
+    endif()
+
     mark_as_advanced(expat_INCLUDE_DIR expat_LIBRARY expat_VERSION)
 endif()

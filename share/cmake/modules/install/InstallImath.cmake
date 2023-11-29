@@ -144,5 +144,11 @@ if(_Imath_TARGET_CREATE)
         INTERFACE_INCLUDE_DIRECTORIES "${Imath_INCLUDE_DIR};${Imath_INCLUDE_DIR}/Imath"
     )
 
+    if(WIN32)
+        set_target_properties(Imath::Imath PROPERTIES
+            IMPORTED_LOCATION_DEBUG "${_EXT_DIST_ROOT}/${CMAKE_INSTALL_LIBDIR}/${CMAKE_STATIC_LIBRARY_PREFIX}Imath-${_Imath_LIB_VER}_d${CMAKE_STATIC_LIBRARY_SUFFIX}"
+        )
+    endif()
+
     mark_as_advanced(Imath_INCLUDE_DIR Imath_LIBRARY Imath_VERSION)
 endif()
