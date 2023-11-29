@@ -97,12 +97,6 @@ if(NOT pybind11_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_PAC
             BUILD_BYPRODUCTS ${pybind11_INCLUDE_DIR}
             CMAKE_ARGS ${pybind11_CMAKE_ARGS}
             EXCLUDE_FROM_ALL TRUE
-            BUILD_COMMAND ""
-            INSTALL_COMMAND
-                ${CMAKE_COMMAND} --build .
-                                 --config ${CMAKE_BUILD_TYPE}
-                                 --target install
-                                 --parallel
         )
 
         add_dependencies(pybind11::module pybind11_install)

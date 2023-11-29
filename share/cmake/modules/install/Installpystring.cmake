@@ -106,12 +106,6 @@ if(NOT pystring_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_PAC
                 ${CMAKE_COMMAND} -E copy
                 "${PROJECT_SOURCE_DIR}/share/cmake/projects/Buildpystring.cmake"
                 "CMakeLists.txt"
-            BUILD_COMMAND ""
-            INSTALL_COMMAND
-                ${CMAKE_COMMAND} --build .
-                                 --config ${CMAKE_BUILD_TYPE}
-                                 --target install
-                                 --parallel
         )
 
         add_dependencies(pystring::pystring pystring_install)
