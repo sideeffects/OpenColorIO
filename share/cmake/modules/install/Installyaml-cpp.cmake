@@ -154,7 +154,7 @@ if(_yaml-cpp_TARGET_CREATE)
     )
 
     if(WIN32)
-       set_target_properties(yaml-cpp PROPERTIES
+       set_target_properties(yaml-cpp::yaml-cpp PROPERTIES
             IMPORTED_LOCATION_DEBUG "${_EXT_DIST_ROOT}/${CMAKE_INSTALL_LIBDIR}/${CMAKE_STATIC_LIBRARY_PREFIX}yaml-cppd${CMAKE_STATIC_LIBRARY_SUFFIX}"
         )
     endif()
